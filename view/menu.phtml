@@ -1,0 +1,45 @@
+<header>
+	<div class="logo">
+		<a href="index.phtml"><img src="<?= getBaseUrl(); ?>/images/logo-header.png" alt=""></a>
+	</div>
+
+	<nav>
+        <ul>
+			<?php
+			$menu_items = [
+				'about'          => 'О проекте',
+				'location'       => 'Местоположение',
+				'residence'      => 'Выбор квартир',
+				'history'        => 'История',
+				'progress'       => 'Ход строительства',
+				'infrastructure' => 'Инфраструктура',
+				'contact'        => 'Контакты',
+			];
+			foreach ( $menu_items as $item_slug => $item ) :
+				$active = null;
+				if( $item_slug == $slug ){
+					$active = ' class="active"';
+				}
+				$new = '';
+				if( in_array( $item_slug, ['team', 'rewards'] ) ){
+					$new = '<sup>New</sup>';
+				}
+				?>
+                <li <?= $active; ?>><a href="<?= $item_slug; ?>.html"><?= $item; ?></a><?= $new; ?></li>
+			<?php endforeach; ?>
+        </ul>
+
+	</nav>
+
+	<div class="tlf-header">
+		<div><a href="#">8 (812) 933-80-40</a></div>
+		<div><a href="#forms_om" class="callback-om">Обратный звонок</a></div>
+	</div>
+</header>
+
+<!--Кнопочка мобильная-->
+<div class="o-grid__item">
+    <button class="touch-menu">
+        <span></span>
+    </button>
+</div>
