@@ -1,0 +1,152 @@
+
+/**/
+/*=============================*/
+/*=====       FORM         ====*/
+/*=============================*/
+/**/
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++*/
+/*====================  Magnific +++++++++++++*/
+
+/* overlay at start */
+.mfp-fade.mfp-bg {
+    opacity: 0;
+    background: #fffefe;
+
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+    opacity: 1;
+}
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+    opacity: 0;
+}
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+    opacity: 0;
+
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+
+    -webkit-transform: translateY(-20px) perspective(600px) rotateX(10deg);
+    -moz-transform: translateY(-20px) perspective(600px) rotateX(10deg);
+    -ms-transform: translateY(-20px) perspective(600px) rotateX(10deg);
+    -o-transform: translateY(-20px) perspective(600px) rotateX(10deg);
+    transform: translateY(-20px) perspective(600px) rotateX(10deg);
+}
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+    opacity: 1;
+
+    -webkit-transform: translateY(0) perspective(600px) rotateX(0deg);
+    -moz-transform: translateY(0) perspective(600px) rotateX(0deg);
+    -ms-transform: translateY(0) perspective(600px) rotateX(0deg);
+    -o-transform: translateY(0) perspective(600px) rotateX(0deg);
+    transform: translateY(0) perspective(600px) rotateX(0deg);
+}
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+    opacity: 0;
+
+    -webkit-transform: translateY(-10px) perspective(600px) rotateX(10deg);
+    -moz-transform: translateY(-10px) perspective(600px) rotateX(10deg);
+    -ms-transform: translateY(-10px) perspective(600px) rotateX(10deg);
+    -o-transform: translateY(-10px) perspective(600px) rotateX(10deg);
+    transform: translateY(-10px) perspective(600px) rotateX(10deg);
+}
+/*============================================*/
+
+.mfp-container {
+    position: fixed !important;
+}
+
+button.mfp-close {
+    //width: auto;
+    //display: -webkit-box;
+    //display: -webkit-flex;
+    //display: -ms-flexbox;
+    //display: flex;
+    //right: 25px;
+    //margin-top: 30px;
+    color: #333;
+    position: fixed;
+}
+
+.mfp-text {
+    display: inline-block;
+    color: #999;
+    font-size: 18px;
+    //font-family: $ft;
+    font-style: italic;
+}
+
+.close {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    display: inline-block;
+    padding-left: 15px;
+    color: #9b9b9b;
+    opacity: 1;
+    font-size: 72px;
+    font-family: "Times New Roman", Times, serif;
+    cursor: pointer;
+    &:hover { opacity: .5;}
+}
+
+
+
+//Убираем тень в попапе
+.mfp-figure:after {box-shadow: none;}
+
+
+//Попапы стрелка стили
+
+.mfp-arrow-right:before {
+    height: 18px;
+    width: 18px;
+    border-top: 4px solid #aeacac;
+    border-right: 4px solid #aeacac;
+    border-bottom: 0;
+    border-left: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.mfp-arrow-left:before {
+    height: 18px;
+    width: 18px;
+    border-top: 4px solid #aeacac;
+    border-left: 4px solid #aeacac;
+    border-bottom: 0;
+    border-right: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.mfp-arrow-right:after, .mfp-arrow-left:after {
+    display: none;
+}
+
+.mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    color: #9b9b9b;
+    padding-right: 0;
+    opacity: 1;
+    font-size: 72px;
+    font-family: "Times New Roman", Times, serif;
+    cursor: pointer;
+    &:hover { opacity: .5;}
+}

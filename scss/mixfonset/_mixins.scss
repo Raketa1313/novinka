@@ -1,0 +1,94 @@
+
+/* ------------------- triangle ---------------*/
+@mixin triangle($direction, $size: 6px, $color: #222){
+    content: '';
+    display: block;
+    position: absolute;
+    height: 0; width: 0;
+    @if ($direction == 'up'){
+        border-bottom: $size solid $color;
+        border-left: 1/2*$size solid transparent;
+        border-right: 1/2*$size solid transparent;
+        bottom: 100%;
+    }
+    @else if ($direction == 'down'){
+        border-top: $size solid $color;
+        border-left: 1/2*$size solid transparent;
+        border-right: 1/2*$size solid transparent;
+        top: 100%;
+    }
+    @else if ($direction == 'left'){
+        border-top: 1/2*$size solid transparent;
+        border-bottom: 1/2*$size solid transparent;
+        border-right: $size solid $color;
+        right: 100%;
+    }
+    @else if ($direction == 'right'){
+        border-top: 1/2*$size solid transparent;
+        border-bottom: 1/2*$size solid transparent;
+        border-left: $size solid $color;
+        left: 100%;
+    }
+}
+
+
+/* ------------------ flex ----------------- */
+@mixin flex($direction: row, $wrap: nowrap, $alignI: center, $justify: space-between ) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-align-items: $alignI;
+    -ms-align-items: $alignI;
+    align-items: $alignI;
+
+    @if $justify == flex-start {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+    } @else if $justify == flex-end {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+    } @else if $justify == space-between {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+    } @else if $justify == space-around {
+        -ms-flex-pack: distribute;
+    } @else {
+        -webkit-box-pack: $justify;
+        -ms-flex-pack: $justify;
+    }
+    -webkit-justify-content: $justify;
+    -ms-justify-content: $justify;
+    justify-content: $justify;
+
+    -webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+
+    -webkit-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+}
+
+
+/* ------------------ flexDirection ----------------- */
+@mixin flexDirection($direction) {
+    -webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+}
+
+
+/* -------------- transition ---------- */
+@mixin trs($style, $duration){
+    -webkit-transition: $style $duration;
+    transition: $style $duration;
+}
+
+
+/* -------------- transform ---------- */
+@mixin trf($transforms){
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}

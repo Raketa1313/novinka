@@ -1,0 +1,167 @@
+
+/**/
+/*=============================*/
+/*=====          Sidebar   ====*/
+/*=============================*/
+/**/
+
+.o-grid__item {
+    position: fixed;
+    top: 4px;
+    right: 0;
+    margin: 10px;
+    z-index: 3;
+}
+
+.touch-menu {display: none;}
+
+.touch-menu:focus {outline: none;}
+
+.touch-menu span {
+    display: block;
+    position: absolute;
+    top: 21px;
+    left: 6px;
+    right: 6px;
+    height: 4px;
+    background: white;
+}
+
+.touch-menu span::before,
+.touch-menu span::after {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    content: "";
+}
+
+.touch-menu span::before {top: -10px;}
+.touch-menu span::after {bottom: -10px;}
+
+.touch-menu { background-color: $blue;}
+
+.touch-menu span {
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+}
+
+.touch-menu span::before,
+.touch-menu span::after {
+    -webkit-transition-duration: 0.3s, 0.3s;
+    transition-duration: 0.3s, 0.3s;
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+}
+
+.touch-menu span::before {
+    -webkit-transition-property: top, -webkit-transform;
+    transition-property: top, transform;
+}
+
+.touch-menu span::after {
+    -webkit-transition-property: bottom, -webkit-transform;
+    transition-property: bottom, transform;
+}
+
+.touch-menu.active {background-color: $red;}
+
+.touch-menu.active span {
+    background: none;
+}
+
+.touch-menu.active span::before {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.touch-menu.active span::after {
+    bottom: 0;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.touch-menu.active span::before,
+.touch-menu.active span::after {
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+}
+
+@media only screen and (max-width : 1024px) {
+    .touch-menu {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        margin: 5px;
+        width: 45px;
+        height: 45px;
+        font-size: 0;
+        text-indent: -9999px;
+        box-shadow: none;
+        border-radius: 3px;
+        border: none;
+        cursor: pointer;
+        -webkit-transition: background 0.3s;
+        transition: background 0.3s;
+    }
+
+    header {
+        left: -263px;
+        width: 260px;
+        height: 100%;
+        opacity: 1;
+
+        -webkit-transition: left .5s ease-out 0.3s;
+        -moz-transition: left .5s ease-out 0.3s;
+        -o-transition: left .5s ease-out 0.3s;
+        transition: left .5s ease-out 0.3s;
+    }
+
+    header.active { left: 0;}
+
+    header {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+        padding: 20px 20px 42px;
+        &:after {
+            bottom: 10px;
+        }
+    }
+    nav {
+        order: 3;
+        height: 65%;
+        ul {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            -webkit-justify-content: space-around;
+            justify-content: space-around;
+            height: 100%;
+        }
+        li {
+            display: block;
+        }
+        a {
+            font-size: 18px;
+        }
+    }
+    .tlf-header {
+        order: 2;
+        margin: 20px 0;
+    }
+    .logo { width: auto;}
+    .tlf-header div:first-child a { font-size: 21px;}
+
+
+}
+

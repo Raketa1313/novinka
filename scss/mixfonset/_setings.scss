@@ -1,0 +1,70 @@
+// COLORS
+// ---------------------------
+
+$blue: #5064ab;
+$black: #333333;
+$red: #e44d64;
+
+// FONTS
+// ---------------------------
+$elM : '', 'Times New Roman', Times, serif;
+
+$ptsR : '', Verdana, Helvetica, Arial, sans-serif;
+
+
+
+// RESPONSIVE
+// ---------------------------
+
+
+
+// TYPOGRAPHIC
+// ---------------------------
+html, body {
+    //font-family: ;
+    font-size: 18px;
+    color: $black;
+}
+
+body {
+    background: #fff;
+}
+
+.container {
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: auto;
+}
+
+
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+h6 {
+
+}

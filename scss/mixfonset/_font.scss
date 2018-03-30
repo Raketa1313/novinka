@@ -1,0 +1,12 @@
+
+/* FONTS */
+/* ================================================ */
+
+@font-face {
+    font-family: 'Web font';
+    src: url('../fonts/webfont.woff2') format('woff2'),
+    url('../fonts/webfont.ttf')  format('truetype'), /* Только если нужна поддержка старых Android, иначе закомментировать */
+    url('../fonts/webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
